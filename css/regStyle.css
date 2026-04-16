@@ -1,0 +1,58 @@
+.reg{
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 40px;
+}
+.reg:hover{
+    transition: 0.3s;
+    transform: scale(1.02);
+}
+.reg input{
+    display: block;
+    margin-bottom: 20px;
+}
+.reg label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.sign h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+
+.form-group label{
+    display: block;
+    margin-bottom: 6px;
+}
+.form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+
+form{
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+form p{
+    margin-top: 15px;
+    font-size: 14px
+}
+.reg h1 {
+    text-align: center;
+}

@@ -1,0 +1,93 @@
+/* Контакты */
+.contacts-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 300px;
+
+}
+.contacts-info{
+    display: flex;
+    flex-direction: column;
+}
+.contacts-info a{
+    font-size: 19px;
+    text-decoration: none;
+    color:#333;
+    margin: 10px;
+}
+.contacts-info a:hover{
+    color: #34d1b2;
+}
+.contacts-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 30px;
+}
+.contacts-form:hover{
+    transition: 0.3s;
+    transform: scale(1.02);
+}
+.contacts-form label{
+    font-size: 18px;
+    margin: 10px 0 auto;
+}
+.contacts-form input{
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.contacts-form textarea{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.contacts-form h2{
+    text-align: center;
+    font-size: 30px;
+}
+.sbm-btn-contacts{
+    margin-top: 10px;
+}
+
+
+/* Отзывы */
+.review{
+    margin-top: 40px;
+}
+.review h2{
+    font-size: 22px;
+}
+.review-card{
+    border: 1px solid #2ab89c;
+    border-radius: 6px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.review-card span{
+    letter-spacing: 5px;
+}
+.review-card p{
+    font-size: 18px;
+}
+.review-grid{
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+@media (max-width:768px){
+    .contacts-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
