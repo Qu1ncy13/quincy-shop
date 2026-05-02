@@ -6,7 +6,7 @@
     <title>Корзина</title>
     <link href="../css/style.css" rel = "stylesheet">
     <link href = "../css/cartStyle.css" rel="stylesheet">
-    <link rel="icon" href="../images/icon_noBG.ico">
+    <link href="../images/icon_noBG.ico" rel="icon">
 </head>
 <body>
     <header>
@@ -26,16 +26,63 @@
     </header>
 
     <main>
-        
+        <section class="cart">
+            <div class="container cart-inner1">
+                <div class="cart-text">
+                    <h1>Корзина</h1>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="../images/products_im/lamp.jpg" alt="lamp">
+                        <a href="../html/products/lamp.html">Настольная лампа</a>
+                        <p>$ 14.99</p>
+                        <div class="count-buttons">
+                            <button class="btn">Удалить</button>
+                            <button class="count-btn">-</button>
+                            <input type="number" name = "count" value="1">
+                            <button class="count-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <img src="../images/products_im/organizer.jpg" alt="organizer">
+                        <a href="../html/products/organizer.html">Органайзер для канцелярии</a>
+                        <p>$ 7.99</p>
+                        <div class="count-buttons">
+                            <button class="btn">Удалить</button>
+                            <button class="count-btn">-</button>
+                            <input type="number" name = "count" value="1">
+                            <button class="count-btn">+</button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="container cart-inner2">
+                <div class="container">
+                    <div class="code">
+                        <div class="input-code">
+                            <label for="code"> Введите промокод</label>
+                            <input type="text" name="code" id="code">
+                        </div>
+                        
+                        <button class="btn">Активировать</button>
+                    </div>
+                </div>
+                <div class="container">
+                        <div class="sum-wrapper">
+                            <h2>Итого:</h2>
+                            <h2>$ 22.98</h2>
+                        </div>
+                        
+                        
+                </div>
+            </div>
+            
+            
+            <!-- <div class="empty-cart"></div> -->
+        </section>
     </main>
 
-
-
-
-    <footer>
-        <div class = "container footer-inner">
-            <p>© 2026 Quincy Shop</p>
-        </div>
-    </footer>
 </body>
 </html>

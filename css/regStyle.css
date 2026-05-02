@@ -4,9 +4,10 @@
     max-width: 800px;
     margin: 10px auto;
     padding: 40px;
+    transition: 0.3s;
 }
 .reg:hover{
-    transition: 0.3s;
+    
     transform: scale(1.02);
 }
 .reg input{
@@ -46,7 +47,7 @@
 form{
     background-color: white;
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 form p{
