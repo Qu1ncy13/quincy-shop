@@ -1,12 +1,15 @@
 .sign{
+    background-color: #f5f5f5;
     max-width: 400px;
-    margin-top: 4px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-radius: 10px;
     margin: 10px auto;
+    transition: 0.3s;
+}
+.sign:hover{
+    transform: scale(1.02);
 }
 .sign h1{
     text-align: center;
@@ -15,7 +18,9 @@
     margin-top: 15px;
 }
 form{
-    padding: 20px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .form-group label{

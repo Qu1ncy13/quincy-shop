@@ -31,31 +31,18 @@
                 <div class="cart-text">
                     <h1>Корзина</h1>
                 </div>
-                <div class="cart-items">
-                    <div class="cart-item">
-                        <img src="../images/products_im/lamp.jpg" alt="lamp">
-                        <a href="../html/products/lamp.html">Настольная лампа</a>
-                        <p>$ 14.99</p>
-                        <div class="count-buttons">
-                            <button class="btn">Удалить</button>
-                            <button class="count-btn">-</button>
-                            <input type="number" name = "count" value="1">
-                            <button class="count-btn">+</button>
-                        </div>
-                    </div>
-                    <div class="cart-item">
-                        <img src="../images/products_im/organizer.jpg" alt="organizer">
-                        <a href="../html/products/organizer.html">Органайзер для канцелярии</a>
-                        <p>$ 7.99</p>
-                        <div class="count-buttons">
-                            <button class="btn">Удалить</button>
-                            <button class="count-btn">-</button>
-                            <input type="number" name = "count" value="1">
-                            <button class="count-btn">+</button>
-                        </div>
-                        
-                    </div>
+                <div class="cart-items"> 
+                    
+                    
+                    
                 </div>
+                <div class="empty-cart hidden">
+                        <h2>Нет добавленных товаров</h2>
+                        <a href="catalog.html" class="btn" style="width: 100%;">Перейти в каталог</a>
+                </div>
+                
+                
+                
 
             </div>
             <div class="container cart-inner2">
@@ -69,20 +56,30 @@
                         <button class="btn">Активировать</button>
                     </div>
                 </div>
-                <div class="container">
-                        <div class="sum-wrapper">
-                            <h2>Итого:</h2>
-                            <h2>$ 22.98</h2>
-                        </div>
-                        
-                        
+                <div class="container cart-total">
+                    <div class="sum-wrapper">
+                        <h2>Итого:</h2>
+                        <h2 class="total-sum">$ 0</h2>
+                    </div>
+                    <div class="total-btn">
+                        <button class="btn" style="font-size: 18px; width: 100%;">Оформить заказ</button>
+                    </div>
+                    
                 </div>
             </div>
-            
-            
-            <!-- <div class="empty-cart"></div> -->
         </section>
+        <div class="overlay hidden">
+            <div class="clean-confirm-block">
+                <h2>Вы точно хотите удалить содержимое корзины?</h2>
+                <div class="clean-confirm-btn-block">
+                    <button class="confirm-btn btn">Подтвердить</button>
+                    <button class = "cancel-btn">Отмена</button>
+                </div>
+                
+            </div>
+        </div>
+        
     </main>
-
+    <script src="../js/cart.js"></script>
 </body>
 </html>

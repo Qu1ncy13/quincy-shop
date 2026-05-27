@@ -21,7 +21,28 @@ body {
     line-height:1.8;
 
 }
-
+.btn{
+    white-space: nowrap;
+    display: inline-block;
+    background-color: #34d1b2;
+    border: #34d1b2;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.btn:hover{
+    transform: scale(1.03);
+    background-color: #2ab89c;
+    cursor:pointer;
+}
+.btn:active{
+    background-color: #00A383;
+    transform: scale(1.1);
+}
 
 
 
@@ -86,27 +107,7 @@ nav{
 
 
 
-.btn{
-    white-space: nowrap;
-    display: inline-block;
-    background-color: #34d1b2;
-    border: #34d1b2;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-.btn:hover{
-    transform: scale(1.03);
-    background-color: #2ab89c;
-}
-.btn:active{
-    background-color: #00A383;
-    transform: scale(1.1);
-}
+
 
 footer{
     background-color:white;
