@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное</title>
+    <link href="../css/favorites.css" rel = "stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/catalogStyle.css">
+    <link rel="icon" href="../images/icon_noBG.ico">
+    
+</head>
+<body>
+    <header>
+        <div class="container header-inner">  
+            <a href="../index.html"> <img src="../images/logo_noBG.png" alt="Quincy Shop" class="logo"></a>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="catalog.html" class="menu-btn">Каталог</a></li>
+                    <li><a href="contacts.html" class="menu-btn">Контакты</a></li>
+                    <li><a href="cart.html" class="menu-btn">Корзина</a></li>
+                    <li><a href="favorites.html" class="menu-btn">Избранное</a></li>
+                </ul>
+            </nav>
+            
+            <a href="../index.html" class = "btn"> Вернуться на главную</a>
+        </div>
+    </header>
+    <main>
+
+        <section class="favorites">
+            <div class="container">
+                <h1>Избранное</h1>
+                <div class="favorites-grid">
+                    
+                </div>
+                 <div class="empty-favorites hidden">
+                    <div class="empty-favorites-inner">
+                        <h2>Нет избранных товаров</h2>
+                        <a href="catalog.html" class="btn empty-favorites-btn" style="width: 90%;">Перейти в каталог</a>
+                    </div>
+                    
+                 </div> 
+            </div>
+        <div class="modal hidden">
+            <div class="overlay">
+                <div class="clean-confirm-block">
+                    <h2>Вы хотите удалить этот товар из избранных?</h2>
+                    <div class="clean-confirm-btn-block">
+                        <button class="confirm-btn btn">Подтвердить</button>
+                        <button class = "cancel-btn">Отмена</button>
+                    </div>
+                </div>
+            </div>  
+        </div>    
+            
+        </section>
+    </main>
+    <script src="../js/favorites.js"></script>
+</body>
+</html>

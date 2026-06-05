@@ -20,10 +20,8 @@
     gap: 30px;
     margin-top: 10px;
 }
-.heart-icon{
-   width: 35px;
-   flex-shrink: 0;
-}
+
+
 .product-card h3{
     font-weight: lighter;
     font-size: 20px;
@@ -85,4 +83,24 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
+.heart-icon {
+   width: 35px;
+   transition: 0.3s;
+   fill:#333;
+   
+}
+.add-favorites-btn{
+    border: none;
+    background-color: white;
+    transition: 0.3s;
+}
+.add-favorites-btn.active path {
+    fill: rgb(255, 147, 147);
+    stroke-width: 2px;
+}
+.add-favorites-btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 

@@ -2,37 +2,7 @@ const cartItems = document.querySelector(".cart-items");
 const totalSum = document.querySelector(".total-sum");
 const emptyCart = document.querySelector(".empty-cart")
 const cartModal = document.querySelector(".overlay");
-let cart = [
-    {
-        id: 1,
-        quantity: 1,
-        title:"Настольная лампа",
-        price: 14.99,
-        image: "../images/products_im/lamp.jpg",
-        catalogLink: "../html/products/lamp.html",
-        alt: "lamp"
-        
-    },
-    {
-        id: 2,
-        quantity: 1,
-        title:"Органайзер для канцелярии",
-        price: 7.99,
-        image: "../images/products_im/organizer.jpg",
-        catalogLink: "../html/products/organizer.html",
-        alt:"organizer"
-
-    },
-    {
-        id: 3,
-        quantity: 1,
-        title: "Доска для заметок",
-        price: 12.99,
-        image: "../images/products_im/board.jpg",
-        catalogLink: "../html/products/board.html", 
-        alt:"board"
-    }
-];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function renderCart(){
     let cartHTML = "";
     cart.forEach((item)=>{
@@ -64,7 +34,9 @@ function renderCart(){
     cartItems.innerHTML = cartHTML;
 
 }
-
+function saveCart(){
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 function changeQuantity(id, value){
     const item = cart.find((item) => item.id === id);
     item.quantity += value;
@@ -148,4 +120,5 @@ function updateCart(){
     setupCartEvents();
     updateCartTotal();
     checkEmptyCart();
+    saveCart();
 }

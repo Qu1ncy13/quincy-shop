@@ -55,9 +55,7 @@
     max-width: 600px;
     margin-bottom: 30px;
 }
-/* .benefits{
-    display: flex;
-} */
+
 .benefits-grid{
     display: grid;
     align-items: center;
