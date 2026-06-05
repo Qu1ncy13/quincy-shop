@@ -2,64 +2,7 @@ const catalogGrid = document.querySelector(".catalog-grid");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-let products = [
-    {
-        id: 1,
-        title:"Настольная лампа",
-        price: 14.99,
-        image: "../images/products_im/lamp.jpg",
-        alt: "lamp",
-    },
-    {
-        id: 2,
-        title:"Органайзер для канцелярии",
-        price: 7.99,
-        image: "../images/products_im/organizer.jpg",
-        alt:"organizer"
-    },
-    {
-        id: 3,
-        title: "Подставка для ноутбука",
-        price: 9.99,
-        image: "../images/products_im/stand.jpg",
-        alt:"stand",
-    },
-    {
-        id: 4,
-        title: "Лоток для документов",
-        price: 8.99,
-        image: "../images/products_im/docums.jpg",
-        alt:"docums",
-    },
-    {
-       id:5,
-       title:"Доска для заметок",
-       price:12.99,
-       image:"../images/products_im/board.jpg",
-       alt:"board",
-    },
-    {
-        id:6,
-        title:"Настольный календарь",
-        price:4.99,
-        image:"../images/products_im/calendar.jpg",
-        alt:"calendar"
-    },
-    {
-        id:7,
-        title:"Полка для книг",
-        price:11.99,
-        image:"../images/products_im/bookstand.jpg",
-        alt:"bookstand"
-    },
-    {
-        id:8,
-        title:"Настольные часы",
-        price:17.99,
-        image:"../images/products_im/clock.jpg",
-        alt:"clock"
-    }
-]
+
 function renderCatalog(){
     
     let catalogHTML = "";
@@ -67,8 +10,8 @@ function renderCatalog(){
         const isFavorite = favorites.some(item => item.id === product.id);
         catalogHTML += `
             <div class="product-card" data-id="${product.id}">
-                <a href="#"><img src="${product.image}" alt="${product.alt}"></a>
-                <a href="#" class="product-card-name"><h3>${product.title}</h3></a>                        
+                <a href="product.html?id=${product.id}"><img src="${product.image}" alt="${product.alt}"></a>
+                <a href="product.html?id=${product.id}" class="product-card-name"><h3>${product.title}</h3></a>                        
                 <p>$ ${product.price}</p>
                 <div class = "button-block">
                     <button class="catalog-btn add-cart-btn" data-id="${product.id}">Добавить в корзину</button>

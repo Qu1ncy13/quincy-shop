@@ -58,6 +58,7 @@ function setupCartEvents(){
     const cleanCartButton = document.querySelector(".clean-cart-btn");
     const cleanCartConfirmBtn = cartModal.querySelector(".confirm-btn");
     const cleanCartCancelBtn = cartModal.querySelector(".cancel-btn");
+     
     plusBtn.forEach((button) =>{
         button.addEventListener("click", ()=>{
             const cartItem = button.closest(".cart-item");
