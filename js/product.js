@@ -32,7 +32,7 @@ function renderProductPage(){
                 <div class="chars">
                     <h3> Характеристики</h3>
                     <ul>
-                        ${specsHTML};
+                        ${specsHTML}
                     </ul>
                 </div>   
             </div>

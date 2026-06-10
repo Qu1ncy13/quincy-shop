@@ -9,7 +9,7 @@ function renderCart(){
         cartHTML += `
         <div class="cart-item" data-id="${item.id}">
             <img src="${item.image}" alt="${item.alt}">
-            <a href="${item.catalogLink}">${item.title}</a>
+            <a href="product.html?id=${item.id}">${item.title}</a>
             <p class="item-total">$ ${(item.price * item.quantity).toFixed(2)}</p>
             <button class = "btn deleteBtn">Удалить</button>
             <div class="count-buttons">

@@ -9,8 +9,8 @@ function renderFavorites(){
     favorites.forEach((item) =>{
         favoritesHTML += `
             <div class="product-card" data-id="${item.id}">
-                <a href="#"><img src="${item.image}" alt="${item.alt}"></a>
-                <a href="#" class="product-card-name"><h3>${item.title}</h3></a>                        
+                <a href="product.html?id=${item.id}"><img src="${item.image}" alt="${item.alt}"></a>
+                <a href="product.html?id=${item.id}" class="product-card-name"><h3>${item.title}</h3></a>                        
                 <p>$ ${item.price}</p>
                 <div class = "button-block">
                     <button class="catalog-btn add-cart-btn" data-id="${item.id}">Добавить в корзину</button>

@@ -50,6 +50,7 @@
 }
 .product-card-name :hover{
     color: #34d1b2;
+    transition: 0.3s;
 }
 
 
