@@ -54,6 +54,18 @@
     font-size: 17px;
 }
 
+.isInCart{
+    display: flex;
+    justify-content: space-between;
+}
+.count-btns-product-page{
+    background-color: rgb(240, 240, 240);
+    width: 30%;
+    justify-content: space-between;
+}
+.count-btns-product-page input{
+    width: 30%;
+}
 
 
 .chars{

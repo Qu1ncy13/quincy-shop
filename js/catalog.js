@@ -7,7 +7,7 @@ function renderCatalog(){
     let catalogHTML = "";
     products.forEach((product) =>{
         const isFavorite = favorites.some(item => item.id === product.id);
-        const isInCart = cart.some((item) => item.id === product.id)
+        const isInCart = cart.some((item) => item.id === product.id);
         const cartItem = cart.find((item) => item.id === product.id);
         let quantity = cartItem ? cartItem.quantity : 1;
         catalogHTML += `
@@ -47,13 +47,13 @@ function changeQuantity(id, value){
     if (item.quantity > 99){
         item.quantity = 99;
     }
-    localStorage.setItem("cart", JSON.stringify(cart));
+    saveCart();
     updateCatalog();
 }
 
 function setupCatalogEvents(){
     const addToCartBtn = document.querySelectorAll(".add-cart-btn");
-    const addToFavsBtn = document.querySelectorAll(".add-favorites-btn")
+    const addToFavsBtn = document.querySelectorAll(".add-favorites-btn");
 
     const countBtnMinus = document.querySelectorAll(".count-btn-minus");
     const countBtnPlus = document.querySelectorAll(".count-btn-plus");
@@ -89,22 +89,21 @@ function setupCatalogEvents(){
         button.addEventListener("click", () => {
             const id = Number(button.dataset.id);
             changeQuantity(id, 1);
-            updateCatalog();
         });
     });
     countBtnMinus.forEach((button) => {
         button.addEventListener("click", () => {
             const id = Number(button.dataset.id);
             changeQuantity(id, -1);
-            updateCatalog();
         });
     }); 
 }
 
-
-
 function saveFavs(){
     localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+function saveCart(){
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 function updateCatalog(){
     renderCatalog();
