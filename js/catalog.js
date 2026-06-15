@@ -1,11 +1,13 @@
 const catalogGrid = document.querySelector(".catalog-grid");
+
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 
-function renderCatalog(){
+function renderCatalog(productsToRender){
     let catalogHTML = "";
-    products.forEach((product) =>{
+    productsToRender.forEach((product) =>{
         const isFavorite = favorites.some(item => item.id === product.id);
         const isInCart = cart.some((item) => item.id === product.id);
         const cartItem = cart.find((item) => item.id === product.id);
@@ -58,6 +60,7 @@ function setupCatalogEvents(){
     const countBtnMinus = document.querySelectorAll(".count-btn-minus");
     const countBtnPlus = document.querySelectorAll(".count-btn-plus");
 
+    const searchInput = document.querySelector(".catalogSearch");
     addToCartBtn.forEach((button) =>{
         button.addEventListener("click", () =>{
             const id = Number(button.dataset.id);
@@ -96,7 +99,13 @@ function setupCatalogEvents(){
             const id = Number(button.dataset.id);
             changeQuantity(id, -1);
         });
-    }); 
+    });
+    searchInput.addEventListener("input", () =>{
+        const filterCatalog = products.filter((product) =>{
+            return product.title.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+        })
+        renderCatalog(filterCatalog);
+    });
 }
 
 function saveFavs(){
@@ -106,7 +115,7 @@ function saveCart(){
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 function updateCatalog(){
-    renderCatalog();
+    renderCatalog(products);
     setupCatalogEvents();
 }
 saveFavs();

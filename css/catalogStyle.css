@@ -1,5 +1,18 @@
 .catalog{
-    padding: 60px 0;
+    margin: 40px 0;
+}
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.search input{
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    width: 600px;
+    font-size: 20px;
 }
 .product-card{
     background-color: #FFFFFF;
@@ -84,8 +97,9 @@
 }
 .catalog-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: 40px;
 }
 .heart-icon {
    width: 35px;
@@ -106,5 +120,4 @@
     transform: scale(1.1);
     cursor: pointer;
 }
-
 
