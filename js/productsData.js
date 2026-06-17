@@ -1,3 +1,29 @@
+const categories = [
+    {
+        categoryID: 1,
+        categoryTitle: "Освещение"
+    },
+    {
+        categoryID: 2,
+        categoryTitle: "Для рабочего места"
+    },
+    {
+        categoryID: 3,
+        categoryTitle: "Подставки и эргономика"
+    },
+    {
+        categoryID: 4,
+        categoryTitle: "Техника и аксессуары"
+    },
+    {
+        categoryID: 5,
+        categoryTitle: "Декор и интерьер"
+    },
+    {
+        categoryID: 6,
+        categoryTitle: "Климат и комфорт"
+    }
+];
 let products = [
     {
         id: 1,
@@ -629,31 +655,4 @@ let products = [
     ],
     categoryID:5
 }
-];
-
-const categories = [
-    {
-        categoryID: 1,
-        categoryTitle: "Освещение"
-    },
-    {
-        categoryID: 2,
-        categoryTitle: "Для рабочего места"
-    },
-    {
-        categoryID: 3,
-        categoryTitle: "Подставки и эргономика"
-    },
-    {
-        categoryID: 4,
-        categoryTitle: "Техника и аксессуары"
-    },
-    {
-        categoryID: 5,
-        categoryTitle: "Декор и интерьер"
-    },
-    {
-        categoryID: 6,
-        categoryTitle: "Климат и комфорт"
-    }
 ];

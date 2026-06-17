@@ -1,5 +1,5 @@
 const catalogGrid = document.querySelector(".catalog-grid");
-
+const emptySearch = document.querySelector(".empty-search");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -61,6 +61,7 @@ function setupCatalogEvents(){
     const countBtnPlus = document.querySelectorAll(".count-btn-plus");
 
     const searchInput = document.querySelector(".catalogSearch");
+
     addToCartBtn.forEach((button) =>{
         button.addEventListener("click", () =>{
             const id = Number(button.dataset.id);
@@ -103,8 +104,17 @@ function setupCatalogEvents(){
     searchInput.addEventListener("input", () =>{
         const filterCatalog = products.filter((product) =>{
             return product.title.toLowerCase().includes(searchInput.value.trim().toLowerCase());
-        })
-        renderCatalog(filterCatalog);
+        });
+        
+        if (filterCatalog.length === 0){
+            renderCatalog(filterCatalog)
+            emptySearch.classList.remove("hidden");
+        }
+        else{
+            emptySearch.classList.add("hidden");
+            renderCatalog(filterCatalog);
+        }
+        
     });
 }
 
