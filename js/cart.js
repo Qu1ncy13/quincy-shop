@@ -2,7 +2,9 @@ const cartItems = document.querySelector(".cart-items");
 const totalSum = document.querySelector(".total-sum");
 const emptyCart = document.querySelector(".empty-cart")
 const cartModal = document.querySelector(".overlay");
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 function renderCart(){
     let cartHTML = "";
     cart.forEach((item)=>{
@@ -48,7 +50,6 @@ function changeQuantity(id, value){
     }
     updateCart();
 }
-// Здесь задаются все кнопки
 renderCart();
 
 function setupCartEvents(){

@@ -61,6 +61,7 @@ function setupCatalogEvents(){
     const countBtnPlus = document.querySelectorAll(".count-btn-plus");
 
     const searchInput = document.querySelector(".catalogSearch");
+    let timeoutId;
 
     addToCartBtn.forEach((button) =>{
         button.addEventListener("click", () =>{
@@ -102,18 +103,21 @@ function setupCatalogEvents(){
         });
     });
     searchInput.addEventListener("input", () =>{
-        const filterCatalog = products.filter((product) =>{
-            return product.title.toLowerCase().includes(searchInput.value.trim().toLowerCase());
-        });
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() =>{
+            const filterCatalog = products.filter((product) =>{
+                return product.title.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+            });
         
-        if (filterCatalog.length === 0){
-            renderCatalog(filterCatalog)
-            emptySearch.classList.remove("hidden");
-        }
-        else{
-            emptySearch.classList.add("hidden");
-            renderCatalog(filterCatalog);
-        }
+            if (filterCatalog.length === 0){
+                renderCatalog(filterCatalog)
+                emptySearch.classList.remove("hidden");
+            }
+            else{
+                emptySearch.classList.add("hidden");
+                renderCatalog(filterCatalog);
+            }
+        }, 700);
         
     });
 }
