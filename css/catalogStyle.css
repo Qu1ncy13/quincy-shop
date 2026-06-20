@@ -169,4 +169,25 @@
     transform: scale(1.1);
     cursor: pointer;
 }
-
+.scroll-top-btn{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.3s;
+}
+.scroll-top-btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.scroll-top-btn:active{
+    transform: scale(1.05);
+    background-color: #f2f2f2;
+}
+.scroll-top-btn svg{
+    width: 20px;
+    height: 20px;
+    fill:#333;
+}

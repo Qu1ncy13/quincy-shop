@@ -1,6 +1,8 @@
 const catalogGrid = document.querySelector(".catalog-grid");
 const emptySearch = document.querySelector(".empty-search");
 
+const scrollBtn = document.querySelector(".scroll-top-btn");
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -60,9 +62,15 @@ function setupCatalogEvents(){
     const countBtnMinus = document.querySelectorAll(".count-btn-minus");
     const countBtnPlus = document.querySelectorAll(".count-btn-plus");
 
-    const searchInput = document.querySelector(".catalogSearch");
-    let timeoutId;
+    const categoryFilters = document.querySelectorAll(".categoryFilter");
 
+    const searchInput = document.querySelector(".catalogSearch");
+
+    
+    
+    let timeoutId;
+    
+    
     addToCartBtn.forEach((button) =>{
         button.addEventListener("click", () =>{
             const id = Number(button.dataset.id);
@@ -118,9 +126,49 @@ function setupCatalogEvents(){
                 renderCatalog(filterCatalog);
             }
         }, 700);
-        
     });
+    let activeCategories = [];
+
+    categoryFilters.forEach((filter) =>{
+        filter.addEventListener("change", () =>{
+            if (filter.checked == true){
+                activeCategories.push(Number(filter.dataset.categoryId));
+            }
+            else{
+                activeCategories = activeCategories.filter(id => id !== Number(filter.dataset.categoryId));
+            }
+            
+            if (activeCategories.length === 0){
+                renderCatalog(products);
+            }
+            else{
+                const filteredCatalog = products.filter((product) =>{
+                    return activeCategories.includes(product.categoryID);
+                });
+                renderCatalog(filteredCatalog);
+            }
+            
+        }); 
+    });
+    
 }
+
+function setupScrollBtn(){
+    window.addEventListener("scroll", () =>{
+        if (window.scrollY > 300){
+            scrollBtn.classList.remove("hidden");
+            scrollBtn.addEventListener("click", () =>{
+                window.scrollTo({
+                    top:0,
+                    behavior:"smooth"
+                })
+            });
+        }
+        else{
+            scrollBtn.classList.add("hidden");
+        }
+    });
+}   
 
 function saveFavs(){
     localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -131,6 +179,7 @@ function saveCart(){
 function updateCatalog(){
     renderCatalog(products);
     setupCatalogEvents();
+    setupScrollBtn();
 }
 saveFavs();
 updateCatalog()
